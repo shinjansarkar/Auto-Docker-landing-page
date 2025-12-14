@@ -408,26 +408,99 @@
     </section>
     
     <!-- Footer -->
-    <footer class="w-full py-12 px-4 md:px-10 border-t border-slate-200 dark:border-[#283639] bg-background-light dark:bg-background-dark">
+    <footer class="w-full py-16 px-4 md:px-10 border-t border-slate-200 dark:border-[#283639] bg-background-light dark:bg-background-dark">
         <div class="layout-container flex justify-center w-full">
-            <div class="w-full max-w-[1280px] flex flex-col gap-8">
-                <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                    <div class="flex items-center gap-2 text-slate-900 dark:text-white">
-                        <span class="material-symbols-outlined text-primary text-2xl">deployed_code</span>
-                        <span class="font-bold text-lg">Auto Docker</span>
+            <div class="w-full max-w-[1280px]">
+                <!-- Footer Content -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                    <!-- Auto Docker Column -->
+                    <div>
+                        <div class="flex items-center gap-2 text-slate-900 dark:text-white mb-4">
+                            <span class="material-symbols-outlined text-primary text-2xl">deployed_code</span>
+                            <span class="font-bold text-lg">Auto Docker</span>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            High-performance Docker automation extension for VS Code.
+                        </p>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">
+                            MIT Licensed.
+                        </p>
                     </div>
-                    <div class="flex flex-wrap justify-center gap-8">
-                        <a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="https://github.com/shinjansarkar/Auto-Docker#readme" target="_blank">Documentation</a>
-                        <a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="https://github.com/shinjansarkar/Auto-Docker" target="_blank">GitHub</a>
-                        <a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="https://marketplace.visualstudio.com/items?itemName=ShinjanSarkar.auto-docker-extension&ssr=false#review-details" target="_blank">Reviews</a>
-                        <a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium" href="https://marketplace.visualstudio.com/items?itemName=ShinjanSarkar.auto-docker-extension" target="_blank">VS Code Marketplace</a>
+                    
+                    <!-- Resources Column -->
+                    <div>
+                        <h3 class="text-white font-semibold text-base mb-4">Resources</h3>
+                        <ul class="space-y-3">
+                            <li>
+                                <a href="https://github.com/shinjansarkar/Auto-Docker#readme" target="_blank" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm">
+                                    Documentation
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/shinjansarkar/Auto-Docker/blob/main/README.md" target="_blank" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm">
+                                    README
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://marketplace.visualstudio.com/items?itemName=ShinjanSarkar.auto-docker-extension" target="_blank" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm">
+                                    VS Code Marketplace
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Community Column -->
+                    <div>
+                        <h3 class="text-white font-semibold text-base mb-4">Community</h3>
+                        <ul class="space-y-3">
+                            <li>
+                                <a href="https://github.com/shinjansarkar/Auto-Docker" target="_blank" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm">
+                                    GitHub
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/shinjansarkar/Auto-Docker/issues" target="_blank" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm">
+                                    Issues
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/shinjansarkar/Auto-Docker/discussions" target="_blank" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm">
+                                    Discussions
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- More Column -->
+                    <div>
+                        <h3 class="text-white font-semibold text-base mb-4">More</h3>
+                        <ul class="space-y-3">
+                            <li>
+                                <a href="https://github.com/shinjansarkar/Auto-Docker/blob/main/LICENSE" target="_blank" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm">
+                                    License (MIT)
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/shinjansarkar/Auto-Docker/releases" target="_blank" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm">
+                                    Releases
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://marketplace.visualstudio.com/items?itemName=ShinjanSarkar.auto-docker-extension&ssr=false#review-details" target="_blank" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm">
+                                    Reviews
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 dark:text-slate-600 text-sm">
-                    <div>© 2024 Auto Docker Extension. All rights reserved.</div>
-                    <div class="flex items-center gap-2">
-                        <span>Built with ❤️ by</span>
-                        <a href="https://github.com/shinjansarkar" target="_blank" class="text-primary hover:text-cyan-400 font-medium transition-colors">Shinjan Sarkar</a>
+                
+                <!-- Footer Bottom -->
+                <div class="pt-8 border-t border-slate-200 dark:border-[#283639] flex flex-col md:flex-row justify-between items-center gap-4">
+                    <div class="text-slate-600 dark:text-slate-400 text-sm">
+                        © 2025 Auto Docker Extension. All rights reserved.
+                    </div>
+                    <div class="text-slate-600 dark:text-slate-400 text-sm">
+                        Designed with <span class="text-red-500">❤</span> by <a href="https://github.com/shinjansarkar" target="_blank" class="text-primary hover:text-cyan-400 transition-colors">Shinjan Sarkar</a>.
                     </div>
                 </div>
             </div>
