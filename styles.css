@@ -1,0 +1,138 @@
+/* Custom Styles for Auto Docker Website */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #101f22;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #13c8ec;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0fa8c8;
+}
+
+/* Prevent flash of unstyled content */
+body {
+    opacity: 1;
+    transition: opacity 0.3s ease-in;
+}
+
+/* Enhanced link hover effects */
+a {
+    transition: all 0.2s ease-in-out;
+}
+
+/* Button hover effects */
+button {
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Code block enhancements */
+pre, code {
+    font-family: 'Courier New', monospace;
+}
+
+/* Loading animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Glowing effect for primary elements */
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 20px -5px rgba(19, 200, 236, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 30px -5px rgba(19, 200, 236, 0.7);
+    }
+}
+
+.glow-effect {
+    animation: glow 2s ease-in-out infinite;
+}
+
+/* Print styles */
+@media print {
+    nav, footer, button {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+}
+
+/* Accessibility improvements */
+:focus {
+    outline: 2px solid #13c8ec;
+    outline-offset: 2px;
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    body {
+        background: #000;
+        color: #fff;
+    }
+    
+    .text-primary {
+        color: #00ffff !important;
+    }
+}
+
+/* Dark mode specific enhancements */
+.dark {
+    color-scheme: dark;
+}
+
+/* Selection styling */
+::selection {
+    background-color: rgba(19, 200, 236, 0.3);
+    color: #fff;
+}
+
+::-moz-selection {
+    background-color: rgba(19, 200, 236, 0.3);
+    color: #fff;
+}

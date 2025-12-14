@@ -1,0 +1,15 @@
+# Robots.txt for Auto Docker Website
+# https://autodocker.dev/robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://autodocker.dev/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Block access to admin or private areas (if any)
+# Disallow: /admin/
+# Disallow: /private/
