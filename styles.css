@@ -136,3 +136,89 @@ pre, code {
     background-color: rgba(19, 200, 236, 0.3);
     color: #fff;
 }
+
+/* Mobile Menu Styles */
+#mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+#mobile-menu.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Mobile menu button fix */
+#mobile-menu-btn {
+    z-index: 10000;
+    position: relative;
+}
+
+/* Responsive Typography */
+@media (max-width: 640px) {
+    h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+        line-height: 1.3;
+    }
+    
+    h3 {
+        font-size: 1.25rem;
+    }
+}
+
+/* Responsive Containers */
+@media (max-width: 768px) {
+    .layout-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* Prevent horizontal scroll on mobile */
+body {
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Lock body scroll when mobile menu is open */
+body.menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
+/* Fix for iOS Safari */
+@supports (-webkit-touch-callout: none) {
+    #mobile-menu {
+        height: -webkit-fill-available;
+    }
+}
+
+/* Responsive grid improvements */
+@media (max-width: 768px) {
+    .grid {
+        gap: 1rem;
+    }
+}
+
+/* Responsive padding adjustments */
+@media (max-width: 640px) {
+    section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+}
