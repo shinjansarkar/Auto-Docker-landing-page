@@ -161,6 +161,20 @@ pre, code {
 #mobile-menu-btn {
     z-index: 10000;
     position: relative;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+#mobile-menu-btn:active {
+    transform: scale(0.95);
+}
+
+#mobile-menu-close {
+    z-index: 10001;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 
 /* Responsive Typography */
