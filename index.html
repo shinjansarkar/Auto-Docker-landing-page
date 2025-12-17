@@ -111,17 +111,17 @@
     </div>
     
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden fixed inset-0 z-[9999] bg-background-dark/95 backdrop-blur-lg md:hidden">
-        <div class="absolute top-4 right-4">
-            <button id="mobile-menu-close" class="text-white p-2 hover:text-primary transition-colors">
-                <span class="material-symbols-outlined text-3xl">close</span>
+    <div id="mobile-menu" class="hidden fixed inset-0 z-[9999] bg-[#101f22]/98 backdrop-blur-lg md:hidden">
+        <div class="absolute top-6 right-6">
+            <button id="mobile-menu-close" class="text-white p-2 hover:text-primary transition-colors flex items-center justify-center w-10 h-10">
+                <span class="material-symbols-outlined text-4xl">close</span>
             </button>
         </div>
-        <div class="flex flex-col items-center justify-center h-full gap-8">
-            <a class="text-2xl font-medium hover:text-primary transition-colors" href="#features">Features</a>
-            <a class="text-2xl font-medium hover:text-primary transition-colors" href="#how-it-works">How it Works</a>
-            <a class="text-2xl font-medium hover:text-primary transition-colors" href="https://github.com/shinjansarkar/Auto-Docker#readme" target="_blank">Docs</a>
-            <button onclick="window.location.href='https://marketplace.visualstudio.com/items?itemName=ShinjanSarkar.auto-docker-extension'" class="flex cursor-pointer items-center justify-center rounded-full h-12 px-8 bg-primary hover:bg-cyan-400 text-slate-900 text-base font-bold transition-all shadow-lg shadow-primary/20">
+        <div class="flex flex-col items-center justify-center h-full gap-10 px-8">
+            <a class="text-2xl font-semibold hover:text-primary transition-colors text-white" href="#features">Features</a>
+            <a class="text-2xl font-semibold hover:text-primary transition-colors text-white" href="#how-it-works">How it Works</a>
+            <a class="text-2xl font-semibold hover:text-primary transition-colors text-white" href="https://github.com/shinjansarkar/Auto-Docker#readme" target="_blank">Docs</a>
+            <button onclick="window.location.href='https://marketplace.visualstudio.com/items?itemName=ShinjanSarkar.auto-docker-extension'" class="flex cursor-pointer items-center justify-center rounded-full h-14 px-10 bg-primary hover:bg-cyan-400 text-slate-900 text-lg font-bold transition-all shadow-lg shadow-primary/30 mt-4">
                 <span class="truncate">Install Extension</span>
             </button>
         </div>
@@ -512,6 +512,71 @@
     </footer>
     
     <!-- Custom JavaScript -->
-    <script src="/app.js"></script>
+    <script src="./app.js"></script>
+    
+    <!-- Fallback inline script for production -->
+    <script>
+    // Immediate execution for mobile menu
+    (function() {
+        function initMobileMenu() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenuClose = document.getElementById('mobile-menu-close');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (!mobileMenuBtn || !mobileMenu) return;
+            
+            function openMobileMenu() {
+                mobileMenu.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+                document.body.classList.add('menu-open');
+            }
+            
+            function closeMobileMenu() {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = '';
+                document.body.classList.remove('menu-open');
+            }
+            
+            mobileMenuBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                openMobileMenu();
+            });
+            
+            if (mobileMenuClose) {
+                mobileMenuClose.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    closeMobileMenu();
+                });
+            }
+            
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    closeMobileMenu();
+                });
+            });
+            
+            mobileMenu.addEventListener('click', function(e) {
+                if (e.target === mobileMenu) {
+                    closeMobileMenu();
+                }
+            });
+            
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+                    closeMobileMenu();
+                }
+            });
+        }
+        
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initMobileMenu);
+        } else {
+            initMobileMenu();
+        }
+    })();
+    </script>
 </body>
 </html>

@@ -144,26 +144,34 @@ pre, code {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 9999;
+    z-index: 9999 !important;
     display: flex;
     opacity: 1;
     visibility: visible;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh; /* Dynamic viewport height for mobile */
 }
 
 #mobile-menu.hidden {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+    display: none;
 }
 
 /* Mobile menu button fix */
 #mobile-menu-btn {
-    z-index: 10000;
+    z-index: 10000 !important;
     position: relative;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #mobile-menu-btn:active {
@@ -171,10 +179,27 @@ pre, code {
 }
 
 #mobile-menu-close {
-    z-index: 10001;
+    z-index: 10001 !important;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
+}
+
+#mobile-menu-close:active {
+    transform: scale(0.95);
+}
+
+/* Ensure menu links are properly styled */
+#mobile-menu a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+#mobile-menu button {
+    width: auto;
 }
 
 /* Responsive Typography */
